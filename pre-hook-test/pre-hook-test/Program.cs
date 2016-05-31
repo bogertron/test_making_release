@@ -10,7 +10,7 @@ namespace pre_hook_test
     {
         static void Main(string[] args)
         {
-            something bad
+            something bad again
         }
     }
 }
