@@ -1,0 +1,9 @@
+pipeline {
+	agent master
+
+	stages {
+		stage 'Build' {
+			bat "\"${tool 'MSBuild'}\" Build.Proj /t:Build"
+		}
+	}
+}
