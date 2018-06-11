@@ -7,11 +7,15 @@ pipeline {
 
 	stages {
 		stage ('Build') {
-			bat "\"${tool 'MSBuild'}\" Build.Proj /t:Build"
+			steps {
+				bat "\"${tool 'MSBuild'}\" Build.Proj /t:Build"
+			}
 		}
 		
 		stage ('Test') {
-			bat "echo running tests"
+			steps {
+				bat "echo running tests"
+			}
 		}
 	}
 }
