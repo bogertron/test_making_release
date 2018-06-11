@@ -8,7 +8,7 @@ pipeline {
 	stages {
 		stage ('Build') {
 			steps {
-				bat "\"${tool 'MSBuild'}\" Build.Proj /t:Build"
+				bat "\"${tool 'VS2015_MSBuild'}\" Build.Proj /t:Build"
 			}
 		}
 		
