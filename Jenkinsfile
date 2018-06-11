@@ -4,6 +4,9 @@ pipeline {
 			label 'Master'
 		}
 	}
+	parameters { 
+		string(name: 'TESTSTR', defaultValue: 'Test', description: 'Can this be set')
+	}
 
 	stages {
 		stage ('Build') {
@@ -14,7 +17,7 @@ pipeline {
 		
 		stage ('Test') {
 			steps {
-				bat "echo running tests"
+				bat "echo running tests: ${params.TESTSTR}"
 			}
 		}
 	}
