@@ -1,12 +1,16 @@
 pipeline {
-	agent master
+	agent {
+		node {
+			label 'Master'
+		}
+	}
 
 	stages {
-		stage 'Build' {
+		stage ('Build') {
 			bat "\"${tool 'MSBuild'}\" Build.Proj /t:Build"
 		}
 		
-		stage 'Test' {
+		stage ('Test') {
 			bat "echo running tests"
 		}
 	}
